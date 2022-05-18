@@ -70,4 +70,8 @@ def find_empty(bo):
                 return (i, j)  # row, col
     return None
 
+print("Task:\n")
+print_board(board)
+solve(board)
+print("\nSolution:\n")
 print_board(board)
