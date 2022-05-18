@@ -10,6 +10,24 @@ board = [
     [0, 0, 3, 6, 0, 0, 0, 9, 7]
 ]
 
+def solve(bo):
+    find = find_empty(bo)
+    if not find:
+        return True
+    else:
+        row, col = find
+
+    for i in range(1,10):
+        if valid(bo, i, (row, col)):
+            bo[row][col] = i
+
+            if solve(bo):
+                return True
+
+            bo[row][col] = 0
+
+    return False
+
 def print_board(bo):
     for i in range(len(bo)):
         if i % 3 == 0 and i != 0:
